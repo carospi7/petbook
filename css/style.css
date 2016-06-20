@@ -1,0 +1,322 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+select {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+.centrar {
+    text-align: center;
+}
+
+.lineaCorta {
+    background-color: #312633;
+    height: 5px;
+    width: 100px;
+    margin: 0 auto;
+}
+
+
+/* Menu principal */
+
+#menuPrincipal ul {
+    float: right;
+    text-align: right;
+    margin-top: 30px;
+}
+
+#menuPrincipal li a {
+    color: #000;
+}
+
+#menuPrincipal li a:hover {
+    border-top: 3px solid #312633;
+    background: none;
+}
+
+#menuPrincipal li a.seleccionado {
+    border-top: 3px solid #312633;
+    padding-top: 10px;
+}
+
+/* Barra de navegación Sticky */
+
+header .logoBlanco {
+    display: none;
+}
+
+header.sticky {
+  font-size: 18px;
+  line-height: 30px;
+  height: 30px;
+  background: #2C3942;
+  text-align: left;
+  padding-left: 20px;
+  transition: all 0.4s ease;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  z-index: 9999;
+}
+
+header.sticky img {
+    display: none;
+}
+
+header.sticky .logoBlanco {
+    display: initial;
+}
+
+header.sticky .logoBlanco img {
+    display: initial;
+    margin: 7px 0;
+}
+
+header.sticky #menuPrincipal {
+    padding-top: 0;
+    text-align: center;
+}
+
+header.sticky #menuPrincipal ul {
+    margin-top: 0;
+}
+
+header.sticky #menuPrincipal ul li a {
+    color:#fff;
+    font-size: 12px;
+}
+
+header.sticky #menuPrincipal ul li a.seleccionado {
+    border-top: 3px solid #fff;
+}
+
+header.sticky #menuPrincipal ul li #botonConectar {
+    background: #00e2c5;
+    color: #2C3942;
+    padding: 5px;
+}
+
+
+/* Banners */
+
+#seccionBanners {
+    background-image:url(../imagenes/img_sitio/banner-buscar.jpg);
+    height: 340px;
+    background-size: cover;
+}
+
+#seccionBanners h1 {
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 44px;
+    padding-bottom: 30px;
+    padding-top: 50px;
+}
+
+#seccionBanners form input, #seccionBanners form select {
+    padding: 15px;
+        background: #fff;
+}
+
+#seccionBanners form input[name="ubicacion"] {
+    width: 40%;
+}
+
+#seccionBanners form button {
+    padding: 15px;
+    background-color: #312633;
+    color: #FFF;
+    border: 1px solid #312633;
+}
+
+
+/* seccion categorias del sitio */
+
+#categoriasSitio article h2 {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px 0 5px 0;
+}
+
+#categoriasSitio article p {
+    font-size: 14px;
+}
+
+/* Seccion de novedades */
+
+
+#seccionNovedades h2 {
+    font-size: 40px;
+    padding: 40px 150px;
+}
+
+#seccionNovedades h2 span {
+    font-weight: bold;
+}
+
+#seccionNovedades article h3 {
+    position: absolute;
+    top: 35%;
+    padding: 0 40px;
+    z-index: 99;
+    color: #FFF;
+    font-size: 22px;
+    line-height: 23px;
+}
+
+#seccionNovedades article  {
+    margin-top: 20px;
+}
+
+
+.overlayNoticia {
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    width: 314px;
+    height: 314px;
+    z-index: 9;
+    top: 0;
+    left: 33px;
+}
+
+/* -- Secciones Conexión -- */
+
+#botonConectar {
+    border: 1px solid #00e2c5;
+    color: #00e2c5;
+    padding: 5px;
+    background: #fff;
+}
+
+#blackLayer {
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    z-index: 9999;
+    height: 100%;
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+}
+
+#navegacionContarse {
+    left: 50%;
+    display: none;
+    position: absolute;
+    top: 61px;
+    transform: translateX(-50%);
+    width: 320px;
+    z-index: 99999;
+}
+
+#navegacionContarse button {
+    background: #000;
+    padding: 10px 20px;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+
+}
+
+#conectarse h1, #registrarse h1 {
+    text-transform: uppercase;
+    font-size: 15px;
+    padding-bottom: 10px;
+    color: #00e2c5;
+    border-bottom: 1px solid #00e2c5;
+    margin-bottom: 20px;
+}
+
+#conectarse form, #registrarse form {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+#conectarse form label, #registrarse form label {
+    display: block;
+    padding: 10px 0;
+}
+
+#conectarse form input[type="submit"], #registrarse form input[type="submit"] {
+    background: #00e2c5;
+    color: #000;
+    padding:10px 0;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#conectarse form input, #registrarse form input {
+    padding: 10px;
+    width: 80%;
+}
+
+#conectarse {
+    background-color: rgba(0,0,0,0.8);
+    left: 50%;
+    display: none;
+    position: absolute;
+    top: 100px;
+    transform: translateX(-50%);
+    width: 320px;
+    z-index: 99999;
+    color: #fff;
+    padding: 30px 20px 40px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#registrarse {
+    background-color: rgba(0,0,0,0.8);
+    left: 50%;
+    display: none;
+    position: absolute;
+    top: 100px;
+    transform: translateX(-50%);
+    width: 320px;
+    z-index: 99999;
+    color: #fff;
+    padding: 30px 20px 40px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+/* Seccion Adopciones */
+
+.itemBox {
+    background: #f8f8f8;
+    padding: 20px;
+    margin: 0 0 30px 0;
+}
+
+/* footer */
+
+footer {
+    background-color: black;
+    box-sizing: border-box;
+    color: white;
+    display: inline-block;
+    font-size: 14px;
+    padding: 10px 20px;
+    position: static;
+    text-align: right;
+    width: 100%;
+    margin-top: 30px;
+}
+
+
+
+
