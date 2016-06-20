@@ -1,51 +1,98 @@
 <?php require_once 'soporte.php'; 
 
-$usuarioSesion = $_SESSION['usuarioLogueado'];
+	$usuarioSesion = $_SESSION['usuarioLogueado'];
 
-$id = $usuarioSesion->getid();
+	$id = $usuarioSesion->getid();
 
-$usuarioModificar = $repositorio->getRepositorioUsuario()->buscarUsuarioId($id);
+	$usuarioModificado = $repositorio->getRepositorioUsuario()->buscarUsuarioId($id);
 
-$errores = [];
+	$errores = [];
 
-if ($_POST)
-{
-	switch ($_POST)
+	if ($_POST)
 	{
-		case ($_POST['nuevoNombre'] !== ''):
-
+		if ($_POST['nuevoNombre'])
+		{
 			$validacion = $validar->validarNombre($_POST['nuevoNombre']);
 
 			if ($validacion === null)
 			{
-				var_dump('llegamos hasta aca');exit;
 				$usuarioSesion->setNombre($_POST['nuevoNombre']);
-				$usuarioModificar->setNombre($_POST['nuevoNombre']);
+				$usuarioModificado->setNombre($_POST['nuevoNombre']);	
 			}
 			else
 			{
 				$errores[] = $validacion;
 			}
+		}
+		elseif ($_POST['nuevoApellido'])
+		{
+			$validacion = $validar->validarApellido($_POST['nuevoApellido']);
+
+			if ($validacion === null)
+			{
+				$usuarioSesion->setApellido($_POST['nuevoApellido']);
+				$usuarioModificado->setApellido($_POST['nuevoApellido']);	
+			}
+			else
+			{
+				$errores[] = $validacion;
+			}
+		}
+		elseif ($_POST['nuevoPassword'] && $_POST['nuevoPasswordConfirm'])
+		{
+			$validacion = $validar->validarPassword($_POST['nuevoPassword']);
+
+			if ($validacion === null)
+			{
+				$validacion = $validar->validarPasswordConfirm($_POST['nuevoPassword'], $_POST['nuevoPasswordConfirm']);
+
+				if ($validacion === null)
+				{
+					$usuarioSesion->setPassword($_POST['nuevoPassword']);
+					$usuarioModificado->setPassword($_POST['nuevoPassword']);	
+				}
+				else
+				{
+					$errores[] = $validacion;		
+				}
+			}
+			else
+			{
+				$errores[] = $validacion;
+			}	
+		}
+		elseif ($_POST['nuevoEmail'])
+		{
+			$validacion = $validar->validarEmail($_POST['nuevoEmail']);
+
+			if ($validacion === null)
+			{
+				$usuarioSesion->setEmail($_POST['nuevoEmail']);
+				$usuarioModificado->setEmail($_POST['nuevoEmail']);	
+			}
+			else
+			{
+				$errores[] = $validacion;
+			}	
+		}
+		elseif ($_POST['nuevaFechaNacimiento'])
+		{
+			$validacion = $validar->validarFechaNacimiento($_POST['nuevaFechaNacimiento']);
+
+			if ($validacion === null)
+			{
+				$usuarioSesion->setFechaNacimiento($_POST['nuevaFechaNacimiento']);
+				$usuarioModificado->setFechaNacimiento($_POST['nuevaFechaNacimiento']);	
+			}
+			else
+			{
+				$errores[] = $validacion;
+			}	
+		}
+
+		$repositorio->getRepositorioUsuario()->guardarUsuario($usuarioModificado);
 	}
 
-var_dump($_POST);
-echo "<br>";
-var_dump($errores);
-}
-/*
-$nombre = ($_POST['nuevoNombre'] !== '')?($_POST['nuevoNombre']):($usuarioSesion->getNombre());
-$apellido = ($_POST['nuevoApellido'] !== '')?($_POST['nuevoApellido']):($usuarioSesion->getApellido());
-$password = ($_POST['nuevoPassword'] !== '')?($_POST['nuevoPassword']):($usuarioSesion->getPassword());
-$passwordConfirm = ($_POST['nuevoPasswordConfirm'] !== '')?($_POST['nuevoPasswordConfirm']):($usuarioSesion->getPassword());
-$email = ($_POST['nuevoEmail'] !== '')?($_POST['nuevoEmail']):($usuarioSesion->getEmail());
-$fechaNacimiento = ($_POST['nuevaFechaNacimiento'] !== '')?($_POST['nuevaFechaNacimiento']):($usuarioSesion->getFechaNacimiento());
-
-$erroresRegistro = $validar->validacionUsuario($nombre, $apellido, $password, $passwordConfirm, $email, $fechaNacimiento);
-
-	if (empty($erroresRegistro))
-	{
-		$repositorio->getRepositorioUsuario()->modificarRegistro($id, $nombre, $apellido, $password, $email, $fechaNacimiento);
-	}*/
 ?>
 
 <html>
@@ -80,11 +127,22 @@ $erroresRegistro = $validar->validacionUsuario($nombre, $apellido, $password, $p
 	<body>
 	
 	<h1>Este es mi perfil</h1>
+
+	<div>
+		<p>
+			<?php 
+				foreach ($errores as $key => $value)
+				{
+					echo $value;
+				}
+			?>
+		</p>
+	</div>
 		
 		<!-- Informacion Nombre -->	
 		<form action="perfilUsuario.php" method="POST">
 			<div class="informacionUsuario">
-				<label>Nombre: <?php echo $usuarioModificar->getNombre(); ?></label>
+				<label>Nombre: <?php echo $usuarioModificado->getNombre(); ?></label>
 				<button class="botonModificar">Modificar</button>
 			</div>
 			
@@ -100,7 +158,7 @@ $erroresRegistro = $validar->validacionUsuario($nombre, $apellido, $password, $p
 		<!-- Informacion Apellido -->	
 		<form action="perfilUsuario.php" method="POST">
 			<div class="informacionUsuario">
-				<label>Apellido: <?php echo $usuarioModificar->getApellido(); ?></label>
+				<label>Apellido: <?php echo $usuarioModificado->getApellido(); ?></label>
 				<button class="botonModificar">Modificar</button>
 			</div>
 
@@ -133,7 +191,7 @@ $erroresRegistro = $validar->validacionUsuario($nombre, $apellido, $password, $p
 		<!-- Informacion Email -->			
 		<form action="perfilUsuario.php" method="POST">
 			<div class="informacionUsuario">
-				<label>Email: <?php echo $usuarioModificar->getEmail(); ?></label>
+				<label>Email: <?php echo $usuarioModificado->getEmail(); ?></label>
 				<button class="botonModificar">Modificar</button>
 			</div>
 
@@ -149,7 +207,7 @@ $erroresRegistro = $validar->validacionUsuario($nombre, $apellido, $password, $p
 		<!-- Informacion Fecha de nacimiento -->
 		<form action="perfilUsuario.php" method="POST">
 			<div class="informacionUsuario">
-				<label>Fecha de nacimiento: <?php echo $usuarioModificar->getFechaNacimiento(); ?></label>
+				<label>Fecha de nacimiento: <?php echo $usuarioModificado->getFechaNacimiento(); ?></label>
 				<button class="botonModificar">Modificar</button>
 			</div>
 
@@ -159,6 +217,8 @@ $erroresRegistro = $validar->validacionUsuario($nombre, $apellido, $password, $p
 				<button type="submit" class="botonAceptar">Aceptar</button>
 			</div>
 		</form>
+
+		<a href="index.php"><button>Volver Inicio</button></a>
 
 	</body>
 
