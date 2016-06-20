@@ -17,7 +17,11 @@ if ($_POST)
 		$password = $_POST['password'];
 		$passwordConfirm = $_POST['passwordConfirm'];
 		$email = $_POST['email'];
-		$fechaNacimiento = $_POST['fechaNacimiento'];
+		$dia = $_POST['dia'];
+		$mes = $_POST['mes'];
+		$ano = $_POST['ano'];
+
+		$fechaNacimiento = $ano.'-'.$mes.'-'.$dia;
 
 		// Validación
 		$erroresValidacionRegistro = $validar->validacionUsuario($nombre, $apellido, $password, $passwordConfirm, $email, $fechaNacimiento);
@@ -86,13 +90,13 @@ if ($_POST)
 	    <!-- enlaces CSS y favicon-->
 	    <?php include_once 'html/elementos/enlaces_generales.php'; ?>
 
-		<!-- bootstrap -->
+	    <!-- bootstrap -->
 	    <!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<!-- FIN bootstrap -->
+		
 	    <!-- enlaces JS -->
 	  	<script type='text/javascript' src='js/JavaScript_sitios/index.js'></script>
-	  	<?php  include_once 'html/elementos/navegacion_sticky.php'; ?> 
+	  	<?php include_once 'html/elementos/navegacion_sticky.php'; ?>
 
 	    <!-- pantalla mobile no escalable -->
 	    <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
@@ -165,7 +169,7 @@ if ($_POST)
 
 		</section>
 		
-		<section id='seccionNovedades' class='centrar container'>
+		<section id='seccionNovedades' class='contenidoCentrado'>
 			
 			<div class='lineaCorta'></div>
 			<h2><span>CONSEJOS</span> PARA EL <span>CUIDADO</span> DE TUS ANIMALES</h2>
@@ -294,7 +298,7 @@ if ($_POST)
 					}
 				</script>
 				<script type='text/javascript' src='js/JavaScript_sitios/index.js'></script>
-			<?php } ?>
+		<?php } ?>
 
 		<section id='registrarse'>
 
@@ -351,7 +355,53 @@ if ($_POST)
 				<div>
 					
 					<label for='fechaNacimiento'>Fecha de nacimiento:</label>
-					<input id='fechaNacimiento' type='text' name='fechaNacimiento' value='<?php echo $fechaNacimiento ?>' placeholder='fecha de nacimiento' />
+					<!--input id='fechaNacimiento' type='text' name='fechaNacimiento' value='<?php //	echo $fechaNacimiento ?>' placeholder='fecha de nacimiento' /-->
+
+					<select name="dia">
+						<?php
+							for ($i=1; $i<=31; $i++)
+							{
+								if ($i == date('j'))
+								{
+									echo '<option value="'.$i.'" selected>'.$i.'</option>';
+								}
+								else
+								{
+									echo '<option value="'.$i.'">'.$i.'</option>';
+								}
+							}
+						?>
+					</select>
+					<select name="mes">
+						<?php
+							for ($i=1; $i<=12; $i++)
+							{
+								if ($i == date('m'))
+								{
+									echo '<option value="'.$i.'" selected>'.$i.'</option>';
+								}
+								else
+								{
+									echo '<option value="'.$i.'">'.$i.'</option>';	
+								}
+							}
+						?>
+					</select>
+					<select name="ano">
+						<?php
+							for($i=date('o'); $i>=1910; $i--)
+							{
+								if ($i == date('o'))
+								{
+									echo '<option value="'.$i.'" selected>'.$i.'</option>';
+								}
+								else
+								{
+									echo '<option value="'.$i.'">'.$i.'</option>';
+								}
+							}
+						?>
+					</select>
 
 				</div>
 				<br>
