@@ -42,7 +42,7 @@
 
 			if ($existeEmail === true)
 			{
-				$email = new email($repositorio->getRepositorioUsuario()->buscarUsuarioPorEmail($destinatario), $asunto, $contenido);
+				$email = new email($repositorio->getRepositorioUsuario()->buscarUsuarioEmail($destinatario)->getEmail(), $asunto, $contenido);
 				$email->enviarEmail();
 				$estadoSitio = 'modificado';
 			}
