@@ -98,7 +98,7 @@
 		}
 		else
 		{
-			$guardarUsuario = $this->conexion->prepare("UPDATE usuarios SET nombre = :nombre, apellido = :apellido, password = :password, email = :email, fecha_nacimiento = :fecha_nacimiento, id_usuario_imagen_perfil = :id_usuario_imagen_perfil, fecha_ultima_modificacion = :fechaModificacion");
+			$guardarUsuario = $this->conexion->prepare("UPDATE usuarios SET nombre = :nombre, apellido = :apellido, password = :password, email = :email, fecha_nacimiento = :fecha_nacimiento, id_usuario_imagen_perfil = :id_usuario_imagen_perfil, fecha_ultima_modificacion = :fechaModificacion WHERE id = :id");
 
 			$guardarUsuario->bindValue(":id", $usuario->getId());
 			$guardarUsuario->bindValue(":fechaModificacion", $fechaActual);

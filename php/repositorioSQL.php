@@ -19,6 +19,14 @@
 		return $this->repositorioUsuario;
 	}
 
+	public function getRepositorioEmail()
+	{
+		if ($this->repositorioEmail == null)
+		{
+			$this->repositorioEmail = new repositorioEmailSQL($this->conexion);
+		}
+	}
+
 	public function startTransaction()
 	{
 		$this->conexion->beginTransaction();

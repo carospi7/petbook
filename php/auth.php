@@ -30,7 +30,7 @@
             if (isset($_COOKIE['usuarioLogueado']))
             {
                 $idUsuario = $_COOKIE['usuarioLogueado'];
-                $usuario = $this->repositorioUsuario->getUsuarioId($idUsuario);
+                $usuario = $this->repositorioUsuario->buscarUsuarioId($idUsuario);
                 $this->conectarse($usuario);
             }
         }

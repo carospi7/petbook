@@ -177,7 +177,7 @@
 
     public function validarFechaNacimiento($fechaNacimiento)
     {
-        $expresionFechaNacimiento = '/^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/](19|20)\d{2}$/';
+        $expresionFechaNacimiento = '/^(19|20)\d{2}[-](0?[1-9]|1[012])[-](0?[1-9]|[12][0-9]|3[01])$/';
         
         if ($fechaNacimiento == '')
         {
@@ -191,7 +191,7 @@
             }
             else
             {
-                return 'Debe ingresar su fecha de nacimiento respetando el formato dd/mm/aaaa';
+                return 'Debe ingresar su fecha de nacimiento respetando el formato aaaa-mm-dd';
             }
         }
     }
