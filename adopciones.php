@@ -113,74 +113,135 @@ if ($_POST)
       <ul>
         <li class="col-md-3">
         	<div class="itemBox">
-	          <img src="" width="100%" height="200px">
-	          <p>"Este es mi perro y quiero darlo en adopcion porque me parece genial"</p>
+	          <img src="imagenes/img_mascotas/1.jpg" width="100%" height="200px">
+	          <ul>
+	          	<li class="edadMascota">edad: 1 año</li>
+	          	<li class="nombreMascota">milo</li>
+	          	<li class="descripcionMascota">Le gusta jugar con chicos y es muy cariñoso.</li>
+	          	<li class="btnAdoptame"><a href="#">Adoptame</a></li>
+	          </ul>
+
           	</div>
         </li>
         <li class="col-md-3">
         	<div class="itemBox">
-	          <img src="" width="100%" height="200px">
-	          <p>"Este es mi perro y quiero darlo en adopcion porque me parece genial"</p>
+	          <img src="imagenes/img_mascotas/2.jpg" width="100%" height="200px">
+	           <ul>
+	          	<li class="edadMascota">edad: 1 año</li>
+	          	<li class="nombreMascota">milo</li>
+	          	<li class="descripcionMascota">Le gusta jugar con chicos y es muy cariñoso.</li>
+	          	<li class="btnAdoptame"><a href="#">Adoptame</a></li>
+	          </ul>
           	</div>
         </li>
         <li class="col-md-3">
         	<div class="itemBox">
-	          <img src="" width="100%" height="200px">
-	          <p>"Este es mi perro y quiero darlo en adopcion porque me parece genial"</p>
+	          <img src="imagenes/img_mascotas/3.jpg" width="100%" height="200px">
+	           <ul>
+	          	<li class="edadMascota">edad: 1 año</li>
+	          	<li class="nombreMascota">milo</li>
+	          	<li class="descripcionMascota">Le gusta jugar con chicos y es muy cariñoso.</li>
+	          	<li class="btnAdoptame"><a href="#">Adoptame</a></li>
+	          </ul>
           	</div>
         </li>
         <li class="col-md-3">
         	<div class="itemBox">
-	          <img src="" width="100%" height="200px">
-	          <p>"Este es mi perro y quiero darlo en adopcion porque me parece genial"</p>
+	          <img src="imagenes/img_mascotas/4.jpg" width="100%" height="200px">
+	           <ul>
+	          	<li class="edadMascota">edad: 1 año</li>
+	          	<li class="nombreMascota">milo</li>
+	          	<li class="descripcionMascota">Le gusta jugar con chicos y es muy cariñoso.</li>
+	          	<li class="btnAdoptame"><a href="#">Adoptame</a></li>
+	          </ul>
           	</div>
         </li>
         <li class="col-md-3">
         	<div class="itemBox">
-	          <img src="" width="100%" height="200px">
-	          <p>"Este es mi perro y quiero darlo en adopcion porque me parece genial"</p>
+	          <img src="imagenes/img_mascotas/5.jpg" width="100%" height="200px">
+	           <ul>
+	          	<li class="edadMascota">edad: 1 año</li>
+	          	<li class="nombreMascota">milo</li>
+	          	<li class="descripcionMascota">Le gusta jugar con chicos y es muy cariñoso.</li>
+	          	<li class="btnAdoptame"><a href="#">Adoptame</a></li>
+	          </ul>
           	</div>
         </li>
         <li class="col-md-3">
         	<div class="itemBox">
-	          <img src="" width="100%" height="200px">
-	          <p>"Este es mi perro y quiero darlo en adopcion porque me parece genial"</p>
+	          <img src="imagenes/img_mascotas/6.jpg" width="100%" height="200px">
+	           <ul>
+	          	<li class="edadMascota">edad: 1 año</li>
+	          	<li class="nombreMascota">milo</li>
+	          	<li class="descripcionMascota">Le gusta jugar con chicos y es muy cariñoso.</li>
+	          	<li class="btnAdoptame"><a href="#">Adoptame</a></li>
+	          </ul>
           	</div>
         </li>
         <li class="col-md-3">
         	<div class="itemBox">
-	          <img src="" width="100%" height="200px">
-	          <p>"Este es mi perro y quiero darlo en adopcion porque me parece genial"</p>
+	          <img src="imagenes/img_mascotas/7.jpg" width="100%" height="200px">
+	           <ul>
+	          	<li class="edadMascota">edad: 1 año</li>
+	          	<li class="nombreMascota">milo</li>
+	          	<li class="descripcionMascota">Le gusta jugar con chicos y es muy cariñoso.</li>
+	          	<li class="btnAdoptame"><a href="#">Adoptame</a></li>
+	          </ul>
           	</div>
         </li>
         <li class="col-md-3">
         	<div class="itemBox">
-	          <img src="" width="100%" height="200px">
-	          <p>"Este es mi perro y quiero darlo en adopcion porque me parece genial"</p>
+	          <img src="imagenes/img_mascotas/8.jpg" width="100%" height="200px">
+	           <ul>
+	          	<li class="edadMascota">edad: 1 año</li>
+	          	<li class="nombreMascota">milo</li>
+	          	<li class="descripcionMascota">Le gusta jugar con chicos y es muy cariñoso.</li>
+	          	<li class="btnAdoptame"><a href="#">Adoptame</a></li>
+	          </ul>
           	</div>
         </li>
         <li class="col-md-3">
         	<div class="itemBox">
-	          <img src="" width="100%" height="200px">
-	          <p>"Este es mi perro y quiero darlo en adopcion porque me parece genial"</p>
+	          <img src="imagenes/img_mascotas/1.jpg" width="100%" height="200px">
+	           <ul>
+	          	<li class="edadMascota">edad: 1 año</li>
+	          	<li class="nombreMascota">milo</li>
+	          	<li class="descripcionMascota">Le gusta jugar con chicos y es muy cariñoso.</li>
+	          	<li class="btnAdoptame"><a href="#">Adoptame</a></li>
+	          </ul>
           	</div>
         </li>
         <li class="col-md-3">
         	<div class="itemBox">
-	          <img src="" width="100%" height="200px">
-	          <p>"Este es mi perro y quiero darlo en adopcion porque me parece genial"</p>
+	          <img src="imagenes/img_mascotas/2.jpg" width="100%" height="200px">
+	           <ul>
+	          	<li class="edadMascota">edad: 1 año</li>
+	          	<li class="nombreMascota">milo</li>
+	          	<li class="descripcionMascota">Le gusta jugar con chicos y es muy cariñoso.</li>
+	          	<li class="btnAdoptame"><a href="#">Adoptame</a></li>
+	          </ul>
           	</div>
         </li>
         <li class="col-md-3">
         	<div class="itemBox">
-	          <img src="" width="100%" height="200px">
-	          <p>"Este es mi perro y quiero darlo en adopcion porque me parece genial"</p>
+	          <img src="imagenes/img_mascotas/3.jpg" width="100%" height="200px">
+	           <ul>
+	          	<li class="edadMascota">edad: 1 año</li>
+	          	<li class="nombreMascota">milo</li>
+	          	<li class="descripcionMascota">Le gusta jugar con chicos y es muy cariñoso.</li>
+	          	<li class="btnAdoptame"><a href="#">Adoptame</a></li>
+	          </ul>
           	</div>
         </li>
         <li class="col-md-3">
         	<div class="itemBox">
-	          <img src="" width="100%" height="200px">
-	          <p>"Este es mi perro y quiero darlo en adopcion porque me parece genial"</p>
+	          <img src="imagenes/img_mascotas/4.jpg" width="100%" height="200px">
+	           <ul>
+	          	<li class="edadMascota">edad: 1 año</li>
+	          	<li class="nombreMascota">milo</li>
+	          	<li class="descripcionMascota">Le gusta jugar con chicos y es muy cariñoso.</li>
+	          	<li class="btnAdoptame"><a href="#">Adoptame</a></li>
+	          </ul>
           	</div>
         </li>
 
